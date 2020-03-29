@@ -28,5 +28,23 @@
       overrite the __proto__ for every object we create based on that
       constructor function.
     </p>
+    <h3>Methods in Classes vs Constructor Functions</h3>
+    <p>
+      When we define methods in a class with the shorthand syntax of parenthesis
+      and function body without assinging it with '=' JavaScript automatically
+      does an optimization for us by adding that method as part of the prototype
+      of that class instead of as a property/method of the instances. This gives
+      us a performance benefit as now this method is only defined once in the
+      prototype instead of a new function object being created for every
+      instance of the class. We typically only ever need methods stored in the
+      prototype as they interact normally with dynamic data of the object
+      instances with the 'this' keyword. Constructor Functions on the other hand
+      dont automatically add methods to the prototype and so instead to get the
+      same performance benefit we must define the method on the prototype object
+      e.g. function.prototype.method. The time an instance method would be
+      preferred is when we need to bind methods of a class to the correct 'this'
+      context such as with event listeners so we can instead define an arrow
+      function.
+    </p>
   </body>
 </html>
