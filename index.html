@@ -46,5 +46,17 @@
       context such as with event listeners so we can instead define an arrow
       function.
     </p>
+    <h3>Getting and Setting Prototypes</h3>
+    <p>
+      The global Object prototype has methods for getting and setting prototypes
+      to objects. Object getPrototypeOf takes an object as an argument and will
+      then return the prototype of that object. Object setPrototypeOf takes an
+      object as an argument and also a new object which will be set as the
+      prototype for that first object argument. These methods are useful for
+      getting and setting prototypes of instantiated objects where we maybe dont
+      want to change the prototype of the base class/object itself. There is
+      also an Object create method which creates an empty object that however
+      takes an argument object which becomes the new objects prototype.
+    </p>
   </body>
 </html>

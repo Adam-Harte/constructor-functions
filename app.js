@@ -56,3 +56,26 @@ Movie.prototype.logRelease = function() {
 const newMovie = new Movie();
 
 console.log(newMovie.__proto__);
+
+// getting and setting prototypes
+const course = {
+  title: 'JavaScript - the complete guide',
+  rating: 5
+};
+
+console.log(Object.getPrototypeOf(course));
+Object.setPrototypeOf(course, {
+  ...Object.getPrototypeOf(course),
+  logRating: function() {
+    console.log(`${this.rating}/5`);
+  }
+});
+course.logRating();
+
+const student = Object.create({
+  logGrades: function() {
+    console.log('A A B');
+  }
+});
+
+console.log(student.__proto__);
