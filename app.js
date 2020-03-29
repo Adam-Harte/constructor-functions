@@ -7,5 +7,15 @@ function Person() {
   };
 }
 
+Person.prototype = {
+  logAge() {
+    console.log(this.age);
+  }
+};
+
 const newPerson = new Person();
 newPerson.greet();
+
+// prototypes
+console.log(newPerson.__proto__);
+newPerson.logAge();
